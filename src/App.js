@@ -30,30 +30,30 @@ const Topic = () => (
     <h2>About</h2>
   </div>
 )
-const Topics = () => (
+const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
     <ul>
       <li>
-        <Link to={`/topics/rendering`}>
+        <Link to={`${match.url}/rendering`}>
           Rendering with React
         </Link>
       </li>
       <li>
-        <Link to={`/topics/components`}>
+        <Link to={`${match.url}/components`}>
           Components
         </Link>
       </li>
       <li>
-        <Link to={`/topics/props-v-state`}>
+        <Link to={`${match.url}/props-v-state`}>
           Props v. State
         </Link>
       </li>
     </ul>
 
-    <Route path={`/topics/rendering`} component={Topic} />
-    <Route path={`/topics/components`} component={Topic} />
-    <Route path={`/topics/props-v-state`} component={Topic} />
+    <Route path={`${match.url}/rendering`} component={Topic} />
+    <Route path={`${match.url}/components`} component={Topic} />
+    <Route path={`${match.url}/props-v-state`} component={Topic} />
   </div>
 )
 
@@ -69,7 +69,6 @@ class App extends Component {
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/topics'>Topics</Link></li>
           </ul>
-  
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
           <Route path='/topics' component={Topics} />
