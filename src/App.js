@@ -23,13 +23,12 @@ const About = () => (
   </div>
 )
 
-
-
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
   </div>
 )
+
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
@@ -52,6 +51,9 @@ const Topics = ({ match }) => (
     </ul>
 
      <Route path={`${match.url}/:topicId`} component={Topic} />
+     <Route exact path={match.url} render={() => (
+      <h3>Please select a topic.</h3>
+    )}/>
   </div>
 )
 
