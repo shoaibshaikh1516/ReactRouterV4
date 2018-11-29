@@ -25,9 +25,9 @@ const About = () => (
 
 
 
-const Topic = () => (
+const Topic = ({ match }) => (
   <div>
-    <h2>About</h2>
+    <h3>{match.params.topicId}</h3>
   </div>
 )
 const Topics = ({ match }) => (
